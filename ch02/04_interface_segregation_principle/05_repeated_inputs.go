@@ -2,6 +2,7 @@ package isp
 
 import (
 	"context"
+	"time"
 )
 
 func UseEncryptV2() {
@@ -14,4 +15,18 @@ func UseEncryptV2() {
 
 	// call the function
 	_, _ = EncryptV2(ctx, ctx, []byte("my data"))
+
+
+	testCxtCall(ctx)
+}
+
+
+type newDeadLine interface {
+	Deadline() (deadline time.Time, ok bool)
+}
+
+
+func testCxtCall(dl newDeadLine) {
+	dl.Deadline()
+
 }

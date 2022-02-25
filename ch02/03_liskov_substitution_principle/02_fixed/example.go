@@ -40,6 +40,8 @@ type PoweredVehicle struct {
 
 func (v PoweredVehicle) startEngine() {
 	// common engine start code
+	c := Car{}
+	c.drive()
 }
 
 type Car struct {
@@ -52,4 +54,13 @@ type Sled struct {
 
 func (s Sled) pushStart() {
 	// do nothing
+}
+
+func testIt(a actions, a2 unpoweredActions) {
+	a2.pushStart()
+}
+
+func caller() {
+	v := Sled{}
+	testIt(v, v)
 }

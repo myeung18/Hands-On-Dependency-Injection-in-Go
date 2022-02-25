@@ -24,3 +24,11 @@ type ReadOnlyCollection struct {
 func (ro *ReadOnlyCollection) Add(item interface{}) {
 	// intentionally does nothing
 }
+
+func testIt(c Collection) {
+}
+
+func Caller() {
+	ro := &ReadOnlyCollection{}
+	testIt(ro)
+}

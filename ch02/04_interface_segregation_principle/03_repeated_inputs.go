@@ -7,14 +7,14 @@ import (
 
 func Encrypt(ctx context.Context, data []byte) ([]byte, error) {
 	// As this operation make take too long, we need to be able to kill it
-	stop := ctx.Done()
+	stop := ctx.Done() 							 //#1 stop short
 	result := make(chan []byte, 1)
 
 	go func() {
 		defer close(result)
 
 		// pull the encryption key from context
-		keyRaw := ctx.Value("encryption-key")
+		keyRaw := ctx.Value("encryption-key") //#2 provide value
 		if keyRaw == nil {
 			panic("encryption key not found in context")
 		}

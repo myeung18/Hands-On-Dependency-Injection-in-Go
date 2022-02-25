@@ -12,6 +12,14 @@ func (d *rowConverter) populate(in *Person, scan func(dest ...interface{}) error
 	return scan(in.Name, in.Email)
 }
 
+func (d *rowConverter) testtest(in *Person, doAction func() int) error  {
+
+	doAction()
+
+	return nil
+
+}
+
 type LoadPerson struct {
 	// compose the row converter into this loader
 	rowConverter

@@ -49,3 +49,42 @@ func (s Sled) stopEngine() {
 func (s Sled) pushStart() {
 	// TODO: implement
 }
+
+
+
+
+
+
+
+type TheAx interface {
+	cut()
+}
+
+type axOne struct {
+
+}
+
+func (a axOne) cut()  {
+
+}
+
+type PowerAx struct {
+	axOne
+}
+
+func test(a TheAx)  {
+
+}
+
+type PoweAxII struct {
+	PowerAx
+}
+
+func (i PoweAxII) cut()  {
+	
+}
+
+func caller() {
+	pa := PoweAxII{}
+	test(pa)
+}
