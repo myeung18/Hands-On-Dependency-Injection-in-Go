@@ -40,6 +40,11 @@ func (loader *LoadPerson) loadFromDB(id int) *sql.Row {
 	return nil
 }
 
+//overriding
+func (loader *LoadPerson) populate(in *Person, scan func(dest ...interface{}) error) error {
+	return scan(in.Name, "")
+}
+
 type LoadAll struct {
 	// compose the row converter into this loader
 	rowConverter

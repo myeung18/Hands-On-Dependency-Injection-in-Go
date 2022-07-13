@@ -12,6 +12,7 @@ func GetUserHandlerV1(resp http.ResponseWriter, req *http.Request) {
 		resp.WriteHeader(http.StatusInternalServerError)
 		return
 	}
+	//hard to do validation, as it demands to chnage this func
 	userID, err := strconv.ParseInt(req.Form.Get("UserID"), 10, 64)
 	if err != nil {
 		resp.WriteHeader(http.StatusPreconditionFailed)

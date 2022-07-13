@@ -32,3 +32,17 @@ func Caller() {
 	ro := &ReadOnlyCollection{}
 	testIt(ro)
 }
+
+type SimplyAdd interface {
+	Add(item interface{})
+}
+
+func tryOne(sim SimplyAdd) {
+
+}
+
+func callIt() {
+	c := &CollectionImpl{}
+
+	tryOne(c)
+}
